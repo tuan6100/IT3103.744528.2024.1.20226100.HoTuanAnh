@@ -1,3 +1,4 @@
+package problem2_2_5;
 import javax.swing.*;
 
 public class ShowTwoNumbers {
