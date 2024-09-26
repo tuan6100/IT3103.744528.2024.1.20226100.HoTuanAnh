@@ -7,15 +7,15 @@ public class Main {
         Matrix mat2 = new Matrix();
         int r1, c1, r2, c2;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of rows and columns of the first matrix:");
+        System.out.print("Enter the number of rows and columns of the first matrix: ");
         r1 = sc.nextInt();
         c1 = sc.nextInt();
-        System.out.println("Enter the number of rows and columns of the second matrix:");
-        r2 = sc.nextInt();
-        c2 = sc.nextInt();
-
         System.out.println("Enter the first matrix:");
         mat1.setMatrix(r1, c1);
+
+        System.out.print("Enter the number of rows and columns of the second matrix: ");
+        r2 = sc.nextInt();
+        c2 = sc.nextInt();
         System.out.println("Enter the second matrix:");
         mat2.setMatrix(r2, c2);
 
