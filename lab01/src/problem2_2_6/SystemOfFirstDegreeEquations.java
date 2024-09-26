@@ -29,7 +29,7 @@ class SystemOfFirstDegreeEquations {
     }
 
     public void setA11() {
-        System.out.print("a = ");
+        System.out.print("a11 = ");
         this.a11 = sc.nextDouble();
     }
     public void setA12() {
