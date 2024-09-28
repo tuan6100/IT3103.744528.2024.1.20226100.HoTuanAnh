@@ -3,18 +3,16 @@ import java.util.*;
 
 public class NumericArray {
     private int[] arr;
-    private int length;
 
-    public NumericArray() {
-        this.arr = new int[100];
-        this.length = 0;
-    }
-    public NumericArray(int[] arr) {
-        this.arr = arr;
-        this.length = arr.length;
-    }
     public NumericArray(int n) {
-        this.arr[length++] = n;
+        this.arr = new int[n];
+    }
+
+    public void setArray(int n) {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            this.arr[i] = sc.nextInt();
+        }
     }
 
     public int[] sort() {
@@ -31,7 +29,7 @@ public class NumericArray {
     }
 
     public void display() {
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
