@@ -50,7 +50,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (option == 3) {
-                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 a11.x + a12.y = b1\na21.x + a22.y = b2");
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 \na11.x + a12.y = b1\na21.x + a22.y = b2");
                 SystemOfFirstDegreeEquations systemOfFirstDegreeEquations = new SystemOfFirstDegreeEquations();
                 systemOfFirstDegreeEquations.setA11();
                 systemOfFirstDegreeEquations.setA12();
