@@ -1,13 +1,9 @@
 package problem2_2_6;
-import java.util.*;
+
+import javax.swing.*;
 
 class SystemOfFirstDegreeEquations {
     private double a11, a12, b1, a21, a22, b2;
-    private Scanner sc;
-
-    public SystemOfFirstDegreeEquations() {
-        this.sc = new Scanner(System.in);
-    }
 
     public double getA11() {
         return a11;
@@ -29,46 +25,37 @@ class SystemOfFirstDegreeEquations {
     }
 
     public void setA11() {
-        System.out.print("a11 = ");
-        this.a11 = sc.nextDouble();
+        this.a11 = Double.parseDouble(JOptionPane.showInputDialog("Ho Tuan Anh 20226100 a11 = "));
     }
     public void setA12() {
-        System.out.print("a12 = ");
-        this.a12 = sc.nextDouble();
+        this.a12 = Double.parseDouble(JOptionPane.showInputDialog("Ho Tuan Anh 20226100 a12 = "));
     }
     public void setB1() {
-        System.out.print("b1 = ");
-        this.b1 = sc.nextDouble();
+        this.b1 = Double.parseDouble(JOptionPane.showInputDialog("Ho Tuan Anh 20226100 b1 = "));
     }
     public void setA21() {
-        System.out.print("a21 = ");
-        this.a21 = sc.nextDouble();
+        this.a21 = Double.parseDouble(JOptionPane.showInputDialog("Ho Tuan Anh 20226100 a21 = "));
     }
     public void setA22() {
-        System.out.print("a22 = ");
-        this.a22 = sc.nextDouble();
+        this.a22 = Double.parseDouble(JOptionPane.showInputDialog("Ho Tuan Anh 20226100 a22 = "));
     }
     public void setB2() {
-        System.out.print("b2 = ");
-        this.b2 = sc.nextDouble();
+        this.b2 = Double.parseDouble(JOptionPane.showInputDialog("Ho Tuan Anh 20226100 b2 = "));
     }
    
     public void solve() {
-        double D = a11*a22 - a12*a21, Dx = b1*a22 - b2*a12, Dy = a11*b2 - a21*b1;
+        double D = a11 * a22 - a12 * a21, Dx = b1 * a22 - b2 * a12, Dy = a11 * b2 - a21 * b1;
         if (D == 0) {
             if (Dx == 0 && Dy == 0) {
-            System.out.println("The system has infinitely many solutions.\n");
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 The system has infinitely many solutions.");
             } else {
-            System.out.println("The system has no solution.\n");
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 The system has no solution.");
             }
         } else {
             double x = Dx / D;
             double y = Dy / D;
-            System.out.printf("The solutions are: x = %.2f and y = %.2f\n", x, y);
+            JOptionPane.showMessageDialog(null, String.format("Ho Tuan Anh 20226100 The solutions are: x = %.2f and y = %.2f", x, y));
         }
     }
 
-    public void done() {
-        sc.close();
-    }
 }

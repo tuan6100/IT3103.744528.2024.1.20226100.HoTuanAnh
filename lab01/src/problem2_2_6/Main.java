@@ -1,66 +1,66 @@
 package problem2_2_6;
-import java.util.*;
+
+import javax.swing.*;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int option;
-        String listOptions = "List avaible options:\n"+
-                        "0. exit \n" +
-                        "1. Solve first degree equation \n" +
-                        "2. Solve second degree equation \n" +
-                        "3. Solve system of first-degree equation\n" +
-                        "Please enter your choice: ";
-        
+        String[] options = {
+            "Exit",
+            "Solve first degree equation",
+            "Solve second degree equation",
+            "Solve system of first-degree equations"
+        };
+
         while (true) {
-                System.out.print(listOptions);             
-                option = sc.nextInt();
-                
-                if (option == 0) {
-                    System.out.println("Thanks!\n");
-                    break;
-                } else if (option == 1) {
-                    System.out.println("ax + b = 0");
-                    try {                       
-                        FirstDegreeEquation firstDegreeEquation = new FirstDegreeEquation();
-                        firstDegreeEquation.setA();
-                        firstDegreeEquation.setB();
-                        firstDegreeEquation.solve();
-                        // firstDegreeEquation.done();
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    System.out.println("\n");
-                } else if (option == 2) {
-                    System.out.println("ax^2 + bx + c = 0");
-                    try {
-                        SecondDegreeEquation secondDegreeEquation = new SecondDegreeEquation();
-                        secondDegreeEquation.setA();
-                        secondDegreeEquation.setB();
-                        secondDegreeEquation.setC();
-                        secondDegreeEquation.solve();
-                        // secondDegreeEquation.done();
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    System.out.println("\n");
-                } else if (option == 3) {
-                    System.out.println("a11.x + a12.y = b1");
-                    System.out.println("a21.x + a22.y = b2");
-                    SystemOfFirstDegreeEquations systemOfFirstDegreeEquations = new SystemOfFirstDegreeEquations();
-                    systemOfFirstDegreeEquations.setA11();
-                    systemOfFirstDegreeEquations.setA12();
-                    systemOfFirstDegreeEquations.setB1();
-                    systemOfFirstDegreeEquations.setA21();
-                    systemOfFirstDegreeEquations.setA22();
-                    systemOfFirstDegreeEquations.setB2();
-                    systemOfFirstDegreeEquations.solve();
-                    // systemOfFirstDegreeEquations.done();
-                    System.out.println("\n");
+            int option = JOptionPane.showOptionDialog(
+                null,
+                "List available options:",
+                "Menu",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                options,
+                options[0]
+            );
+
+            if (option == 0 || option == JOptionPane.CLOSED_OPTION) {
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 Thanks!");
+                break;
+            } else if (option == 1) {
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 ax + b = 0");
+                try {
+                    FirstDegreeEquation firstDegreeEquation = new FirstDegreeEquation();
+                    firstDegreeEquation.setA();
+                    firstDegreeEquation.setB();
+                    firstDegreeEquation.solve();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                else System.out.println("Invalid Option!\n");
+            } else if (option == 2) {
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 ax^2 + bx + c = 0");
+                try {
+                    SecondDegreeEquation secondDegreeEquation = new SecondDegreeEquation();
+                    secondDegreeEquation.setA();
+                    secondDegreeEquation.setB();
+                    secondDegreeEquation.setC();
+                    secondDegreeEquation.solve();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else if (option == 3) {
+                JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 a11.x + a12.y = b1\na21.x + a22.y = b2");
+                SystemOfFirstDegreeEquations systemOfFirstDegreeEquations = new SystemOfFirstDegreeEquations();
+                systemOfFirstDegreeEquations.setA11();
+                systemOfFirstDegreeEquations.setA12();
+                systemOfFirstDegreeEquations.setB1();
+                systemOfFirstDegreeEquations.setA21();
+                systemOfFirstDegreeEquations.setA22();
+                systemOfFirstDegreeEquations.setB2();
+                systemOfFirstDegreeEquations.solve();
+                
             }
-        sc.close();
+        }
     }
 }

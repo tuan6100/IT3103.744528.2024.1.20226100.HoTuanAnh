@@ -1,13 +1,9 @@
 package problem2_2_6;
-import java.util.*;
+
+import javax.swing.*;
 
 class SecondDegreeEquation {
     private double a, b, c;
-    private Scanner sc;
-
-    public SecondDegreeEquation() {
-        this.sc = new Scanner(System.in);
-    }
 
     public double getA() {
         return a;
@@ -20,33 +16,29 @@ class SecondDegreeEquation {
     }
 
     public void setA() {
-        System.out.print("a = ");
-        this.a = sc.nextDouble();
+        String input = JOptionPane.showInputDialog(null, "Ho Tuan Anh 20226100 a = ");
+        this.a = Double.parseDouble(input);
     }
     public void setB() {
-        System.out.print("b = ");
-        this.b = sc.nextDouble();
+        String input = JOptionPane.showInputDialog(null, "Ho Tuan Anh 20226100 b = ");
+        this.b = Double.parseDouble(input);
     }
     public void setC() {
-        System.out.print("c = ");
-        this.c = sc.nextDouble();
+        String input = JOptionPane.showInputDialog(null, "Ho Tuan Anh 20226100 c = ");
+        this.c = Double.parseDouble(input);
     }
 
-    public void solve() throws Exception{
+    public void solve() throws IllegalArgumentException {
         if (a == 0) {
-            throw new Exception("Not the format of second degree equation.\n");
+            throw new IllegalArgumentException("Ho Tuan Anh 20226100 Not the format of second degree equation.\n");
         }
         double delta = Math.pow(b, 2) - 4 * a * c;
         if (delta < 0) {
-            System.out.println("No solution \n");
+            JOptionPane.showMessageDialog(null, "Ho Tuan Anh 20226100 No solution");
         } else if (delta == 0) {
-            System.out.printf("The solution is: x = %.2f\n", -b / (2*a));
+            JOptionPane.showMessageDialog(null, String.format("Ho Tuan Anh 20226100 The solution is: x = %.2f", -b / (2 * a)));
         } else {
-            System.out.printf("The solutions are: x1 = %.2f and x2 = %.2f\n", (-b + Math.sqrt(delta)) / (2*a) , (-b - Math.sqrt(delta)) / (2*a));
+            JOptionPane.showMessageDialog(null, String.format("Ho Tuan Anh 20226100 The solutions are: x1 = %.2f and x2 = %.2f", (-b + Math.sqrt(delta)) / (2 * a), (-b - Math.sqrt(delta)) / (2 * a)));
         }
-    }
-
-    public void done() {
-        sc.close();
     }
 }

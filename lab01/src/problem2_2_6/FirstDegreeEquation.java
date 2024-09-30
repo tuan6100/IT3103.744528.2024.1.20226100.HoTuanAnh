@@ -1,13 +1,9 @@
 package problem2_2_6;
-import java.util.*;
+import javax.swing.JOptionPane;
 
 class FirstDegreeEquation {
     private double a, b;
-    private Scanner sc;
 
-    public FirstDegreeEquation() {
-        this.sc = new Scanner(System.in);
-    }
     public double getA() {
         return a;
     }
@@ -16,22 +12,18 @@ class FirstDegreeEquation {
     }
 
     public void setA() {
-        System.out.print("a =  ");
-        this.a = sc.nextDouble();
+        String input = JOptionPane.showInputDialog(null, "a = ");
+        this.a = Double.parseDouble(input);
     }
     public void setB() {
-        System.out.print("b = ");
-        this.b = sc.nextDouble();
+        String input = JOptionPane.showInputDialog(null, "b = ");
+        this.b = Double.parseDouble(input);
     }
 
-    public void solve() throws Exception{
+    public void solve() throws Exception {
         if (a == 0) {
             throw new Exception("Not the format of first degree equation.\n");
         }
-        System.out.printf("The solution is: x = %.2f\n", -b / a);
-    } 
-
-    public void done() {
-        sc.close();
+        JOptionPane.showMessageDialog(null, String.format("The solution is: x = %.2f", -b / a));
     }
 }
