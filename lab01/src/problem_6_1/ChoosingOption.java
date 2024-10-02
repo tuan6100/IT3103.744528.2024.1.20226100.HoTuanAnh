@@ -16,6 +16,6 @@ public class ChoosingOption {
     //         options,
     //         options[1]);
     //     JOptionPane.showMessageDialog(null, "You've chosen: " + options[n]);
-    //     System.exit(0);
+         System.exit(0);
     }
 }
