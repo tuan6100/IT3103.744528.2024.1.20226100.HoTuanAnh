@@ -1,4 +1,4 @@
-package com;
+package hotuananh20226100;
 public class Cart_HoTuanAnh20226100 {
     public static final int MAX_NUMBERS_ORDERED = 20;   // Số lượng đĩa tối đa
     private DigitalVideoDisc_HoTuanAnh20226100 itemOrdered[] = new DigitalVideoDisc_HoTuanAnh20226100[MAX_NUMBERS_ORDERED];  // Mảng chứa danh sách đĩa

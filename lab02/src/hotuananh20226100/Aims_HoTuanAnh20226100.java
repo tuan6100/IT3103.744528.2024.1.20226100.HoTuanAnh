@@ -1,4 +1,4 @@
-package com;
+package hotuananh20226100;
 
 public class Aims_HoTuanAnh20226100 {
     public static void main(String[] args) {
