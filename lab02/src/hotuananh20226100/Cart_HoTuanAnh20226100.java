@@ -2,8 +2,13 @@ package hotuananh20226100;
 
 public class Cart_HoTuanAnh20226100 {
     public static final int MAX_NUMBERS_ORDERED = 20;   // Số lượng đĩa tối đa
-    private DigitalVideoDisc_HoTuanAnh20226100 itemOrdered[] = new DigitalVideoDisc_HoTuanAnh20226100[MAX_NUMBERS_ORDERED];  // Mảng chứa danh sách đĩa
+    private DigitalVideoDisc_HoTuanAnh20226100 itemOrdered[];  // Mảng chứa danh sách đĩa
     private int qtyOrdered = 0;    // SỐ lượng đĩa hiện tại
+
+    // Constructor
+    public Cart_HoTuanAnh20226100() {
+        this.itemOrdered = new DigitalVideoDisc_HoTuanAnh20226100[MAX_NUMBERS_ORDERED];
+    }
 
     // Getter
     public DigitalVideoDisc_HoTuanAnh20226100[] getDigitalVideoDisc() {
@@ -34,10 +39,11 @@ public class Cart_HoTuanAnh20226100 {
                 }
                 itemOrdered[qtyOrdered - 1] = null;
                 qtyOrdered--;
-                break;
+                System.out.println("HoTuanAnh-20226100 The disc " + disc.getTitle() + " has been removed");
+                return;
             }
         }
-        System.out.println("HoTuanAnh-20226100 The disc has been removed");
+        System.out.println("HoTuanAnh-20226100 The disc "  + disc.getTitle() + " is not found");
     }
 
     // Tính tổng tiền
