@@ -2,6 +2,8 @@ package problem_6_6;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
         Matrix mat1 = new Matrix();
         Matrix mat2 = new Matrix();

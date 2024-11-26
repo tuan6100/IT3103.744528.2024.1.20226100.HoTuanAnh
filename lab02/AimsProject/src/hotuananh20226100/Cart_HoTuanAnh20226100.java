@@ -1,5 +1,6 @@
 package hotuananh20226100;
 
+
 public class Cart_HoTuanAnh20226100 {
     public static final int MAX_NUMBERS_ORDERED = 20;   // Số lượng đĩa tối đa
     private DigitalVideoDisc_HoTuanAnh20226100 itemOrdered[];  // Mảng chứa danh sách đĩa
@@ -26,7 +27,27 @@ public class Cart_HoTuanAnh20226100 {
             return;
         }
         itemOrdered[qtyOrdered++] = disc;
-        System.out.println("HoTuanAnh-20226100 The disc has been added");
+        System.out.println("HoTuanAnh-20226100 The disc " + disc.getTitle() + " has been added");
+    }
+
+    // Thêm danh sách đĩa mới sử dụng mảng
+    // public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100 [] dvdList) {
+    //     for (DigitalVideoDisc_HoTuanAnh20226100 disc : dvdList) {
+    //         addDigitalVideoDisc(disc);   
+
+    //     }
+    // }
+
+    //  Thêm danh sách dĩa mới cho phép truyền số lượng đối số tùy ý cho dvd.
+    public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100... dvdList) {
+        for (DigitalVideoDisc_HoTuanAnh20226100 disc : dvdList) {
+            addDigitalVideoDisc(disc);
+        }
+    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100 dvd1, DigitalVideoDisc_HoTuanAnh20226100 dvd2) {
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
     }
 
     // Xóa đĩa
@@ -63,5 +84,4 @@ public class Cart_HoTuanAnh20226100 {
         }
         System.out.printf("HoTuanAnh-20226100 Total cost is: %.2f\n\n", totalCost());
     }
-
 }

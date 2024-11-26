@@ -1,5 +1,5 @@
 package problem2_2_6;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 class FirstDegreeEquation {
     private double a, b;
@@ -12,18 +12,18 @@ class FirstDegreeEquation {
     }
 
     public void setA() {
-        String input = JOptionPane.showInputDialog(null, "a = ");
+        String input = JOptionPane.showInputDialog(null, "Ho Tuan Anh 20226100  a = ");
         this.a = Double.parseDouble(input);
     }
     public void setB() {
-        String input = JOptionPane.showInputDialog(null, "b = ");
+        String input = JOptionPane.showInputDialog(null, "Ho Tuan Anh 20226100  b = ");
         this.b = Double.parseDouble(input);
     }
 
-    public void solve() throws Exception {
+    public void solve() throws IllegalArgumentException {
         if (a == 0) {
-            throw new Exception("Not the format of first degree equation.\n");
+            throw new IllegalArgumentException("Ho Tuan Anh 20226100 - Not the format of first degree equation.\n");
         }
-        JOptionPane.showMessageDialog(null, String.format("The solution is: x = %.2f", -b / a));
+        JOptionPane.showMessageDialog(null, String.format("Ho Tuan Anh 20226100 - The solution is: x = %.2f", -b / a));
     }
 }
