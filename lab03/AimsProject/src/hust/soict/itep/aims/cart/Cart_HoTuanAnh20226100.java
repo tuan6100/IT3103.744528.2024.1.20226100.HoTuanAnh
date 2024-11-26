@@ -1,0 +1,109 @@
+package hust.soict.itep.aims.cart;
+
+import hust.soict.itep.aims.disc.DigitalVideoDisc_HoTuanAnh20226100;
+
+public class Cart_HoTuanAnh20226100 {
+    public static final int MAX_NUMBERS_ORDERED = 20;   // Số lượng đĩa tối đa
+    private DigitalVideoDisc_HoTuanAnh20226100 itemOrdered[];  // Mảng chứa danh sách đĩa
+    private int qtyOrdered = 0;    // SỐ lượng đĩa hiện tại
+
+    // Constructor
+    public Cart_HoTuanAnh20226100() {
+        this.itemOrdered = new DigitalVideoDisc_HoTuanAnh20226100[MAX_NUMBERS_ORDERED];
+    }
+
+    // Getter
+    public DigitalVideoDisc_HoTuanAnh20226100[] getDigitalVideoDisc() {
+        return itemOrdered;
+    }
+    
+    public int getQtyOrdered() {
+        return qtyOrdered;
+    }
+
+    // Thêm đĩa mới
+    public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100 disc) {
+        if (qtyOrdered >= MAX_NUMBERS_ORDERED) {
+            System.out.println("HoTuanAnh-20226100 The card is almost full");
+            return;
+        }
+        itemOrdered[qtyOrdered++] = disc;
+        System.out.println("HoTuanAnh-20226100 The disc " + disc.getTitle() + " has been added");
+    }
+
+    // // Thêm danh sách đĩa mới sử dụng mảng
+    // public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100 [] dvdList) {
+    //     for (DigitalVideoDisc_HoTuanAnh20226100 disc : dvdList) {
+    //         addDigitalVideoDisc(disc);   
+
+    //     }
+    // }
+
+    //  Thêm danh sách dĩa mới cho phép truyền số lượng đối số tùy ý cho dvd.
+    public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100... dvdList) {
+        for (DigitalVideoDisc_HoTuanAnh20226100 disc : dvdList) {
+            addDigitalVideoDisc(disc);
+        }
+    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100 dvd1, DigitalVideoDisc_HoTuanAnh20226100 dvd2) {
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
+
+    // Xóa đĩa
+    public void removeDigitalVideoDisc(DigitalVideoDisc_HoTuanAnh20226100 disc) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            // Tìm vị trí đĩa
+            if (itemOrdered[i].equals(disc)) {
+                for (int j = i; j < qtyOrdered - 1; j++) {
+                    itemOrdered[j] = itemOrdered[j + 1];
+                }
+                itemOrdered[qtyOrdered - 1] = null;
+                qtyOrdered--;
+                System.out.println("HoTuanAnh-20226100 The disc " + disc.getTitle() + " has been removed");
+                return;
+            }
+        }
+        System.out.println("HoTuanAnh-20226100 The disc "  + disc.getTitle() + " is not found");
+    }
+
+    // Tính tổng tiền
+    public float totalCost() {
+        float total = 0;
+        for (int i = 0; i < qtyOrdered; i++) {
+            total += itemOrdered[i].getCost();
+        }
+        return total;
+    }
+
+    // In hóa đơn
+    public void print() {
+        System.out.println("\n*********************CART************************** \nOrdered items: \n");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println(i+1 + itemOrdered[i].toString());
+        }
+        System.out.printf("Total cost: %.2f\n", totalCost());
+        System.out.println("***************************************************\n\n");
+    }
+
+    // Tìm theo id
+    public void searchById(int id) {
+        if(id > qtyOrdered) {
+            System.out.println("No match found DVD with id " + id);
+        } else {
+            System.out.println("Result: " + itemOrdered[id-1].toString() );
+        }    
+    }
+
+    //Tìm theo title
+    public void searchByTitle(String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemOrdered[i].isMatch(title)) {
+                System.out.println("Result: " + itemOrdered[i].toString());
+                return;
+            }   
+        }
+        System.out.println("No match found DVD with title " + title); 
+    }
+}
