@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 
 public abstract class Media {
-    
+// public abstract class Media implements Comparable<Media> { 
     // private int id;
     // private String title;
     // private String category;
@@ -70,5 +70,14 @@ public abstract class Media {
 
     @Override
     public abstract String toString() ;
+
+    // @Override 
+    // public int compareTo(Media other) { 
+    //     if (!this.getTitle().equals(other.getTitle())) { 
+    //         return this.getTitle().compareTo(other.getTitle()); 
+    //     } else { 
+    //         return Double.compare(this.getCost(), other.getCost()); 
+    //     } 
+    // } 
 
 }

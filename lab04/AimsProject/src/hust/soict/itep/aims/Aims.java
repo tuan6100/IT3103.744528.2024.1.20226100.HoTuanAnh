@@ -22,7 +22,7 @@ public class Aims {
 		    System.out.println("0. Exit");
 		    System.out.println("--------------------------------");
 		    System.out.println("Please choose a number: 0-1-2-3");
-
+            System.out.print("Your option: ");
             int option = scanner.nextInt();
             switch (option) {
 
@@ -70,6 +70,7 @@ public class Aims {
             System.out.println("0. Back");
             System.out.println("--------------------------------");
             System.out.println("Please choose a number: 0-1-2-3-4");
+            System.out.print("Your option: ");
             int option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -91,7 +92,7 @@ public class Aims {
                         try {
                             cart.addMedia(media);
                         } catch (Exception e) {
-                            e.getMessage();
+                            System.out.println(e.getMessage());
                         }
                     }
                     break;
@@ -143,6 +144,7 @@ public class Aims {
 		System.out.println("0. Back");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2");
+        System.out.print("Your option: ");
         int option = scanner.nextInt();
         switch (option) {
 
@@ -157,6 +159,7 @@ public class Aims {
                 System.out.println("0. Back");
                 System.out.println("------------------------");
                 System.out.println("Please choose a number: 0-1-2-3");
+                System.out.print("Your option: ");
                 int option2 = scanner.nextInt();
                 scanner.nextLine();
                 switch (option2) {
@@ -174,10 +177,9 @@ public class Aims {
                         System.out.print("Enter cost: ");
                         float cost = scanner.nextFloat();
                         scanner.nextLine();
-                        System.out.println("Enter amount of authors: ");
+                        System.out.print("Enter amount of authors: ");
                         int num = scanner.nextInt();
                         scanner.nextLine();
-                        System.out.print("Enter author name: ");
                         List<String> authors = new ArrayList<>();
                         for (int i = 0; i < num; i++) {
                             System.out.printf("Enter name of author %d: ", i + 1);
@@ -187,7 +189,7 @@ public class Aims {
                         try {
                             store.addMedia(new Book(id,title,category,cost,authors));
                         } catch (Exception e) {
-                            e.getMessage();
+                            System.out.println(e.getMessage());
                         }
                         break;
                     }
@@ -211,7 +213,7 @@ public class Aims {
                         try {
                             store.addMedia(new DigitalVideoDisc(id, title, category, cost, length, director));
                         } catch (Exception e) {
-                            e.getMessage();
+                            System.out.println(e.getMessage());
                         }
                         break;
                     }
@@ -246,7 +248,7 @@ public class Aims {
                         try {
                             store.addMedia(new CompactDisc(id, title, category, cost, director, artist, tracks));
                         } catch (Exception e) {
-                            e.getMessage();
+                            System.out.println(e.getMessage());
                         }
                         break;
                     }
@@ -260,14 +262,14 @@ public class Aims {
             }
 
             case 2 : {
-                System.out.println("Enter media's title: ");
+                System.out.print("Enter media's title: ");
                 scanner.nextLine();
                 String title = scanner.nextLine();
                 Media media = store.searchByTitle(title);
                 try {
                     store.removeMedia(media);
                 } catch (Exception e) {
-                    e.getMessage();
+                    System.out.println(e.getMessage());
                 }
                 break;
             }
@@ -297,7 +299,7 @@ public class Aims {
             System.out.println("0. Back");
             System.out.println("--------------------------------");
             System.out.println("Please choose a number: 0-1-2");
-
+            System.out.print("Your option: ");
             int option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -305,7 +307,7 @@ public class Aims {
                     try {
                         cart.addMedia(media);
                     } catch (Exception e) {
-                        e.getMessage();
+                        System.out.println(e.getMessage());
                     } 
                     break;
                 }
@@ -346,6 +348,7 @@ public class Aims {
             System.out.println("0. Back");
             System.out.println("--------------------------------");
             System.out.println("Please choose a number: 0-1-2-3-4-5");    
+            System.out.print("Your option: ");
             int option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -355,18 +358,34 @@ public class Aims {
                 case 1 : {
                     System.out.println("Option: ");
                     System.out.println("______________");
-                    System.out.println("1. Filter by title");
-                    System.out.println("2. Filter by id");
+                    System.out.println("1. Filter by id");
+                    System.out.println("2. Filter by title");
                     System.out.println("______________");
                     System.out.println("Please choose a number: 1-2"); 
+                    System.out.print("Your option: ");
                     int option2 = scanner.nextInt();
                     scanner.nextLine();
                     if (option2 == 1) {
+                        System.out.print("Enter media id: ");
                         int id = scanner.nextInt();
-                        System.out.println(cart.searchById(id).toString());
+                        scanner.nextLine();
+                        Media media = cart.searchById(id);
+                        if (media == null) {
+                            System.out.println("No media found");
+                        } else {
+                            System.out.println(media.toString());
+                        }
+                        
                     } else if (option2 == 2) {
+                        System.out.print("Enter media title: ");
                         String title = scanner.nextLine();
-                        System.out.println(cart.searchByTitle(title).toString());
+                        Media media = cart.searchByTitle(title);
+                        if (media == null) {
+                            System.out.println("No media found");
+                        } else {
+                            System.out.println(media.toString());
+                        }
+
                     } else {
                         System.out.println("No option. Try again.");
                     }
@@ -379,6 +398,7 @@ public class Aims {
                     System.out.println("2. Sort by cost");
                     System.out.println("______________");
                     System.out.println("Please choose a number: 1-2"); 
+                    System.out.print("Your option: ");
                     int option2 = scanner.nextInt();
                     scanner.nextLine();
                     if (option2 == 1) {
@@ -403,7 +423,7 @@ public class Aims {
                         try {
                             cart.removeMedia(media);
                         } catch (Exception e) {
-                            e.getMessage();
+                            System.out.println(e.getMessage());
                         }
                     }
                     break;

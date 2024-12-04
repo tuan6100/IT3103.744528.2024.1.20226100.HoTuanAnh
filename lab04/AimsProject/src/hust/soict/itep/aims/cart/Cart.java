@@ -78,7 +78,7 @@ public class Cart {
     public void print() {
         System.out.println("\n*********************CART************************** \nOrdered items: \n");
         itemsOrdered.forEach(media -> System.out.println(media.toString()));
-        System.out.println("Total cost: " + totalCost());
+        System.out.println("Total cost: " + totalCost() + "$");
         System.out.println("***************************************************\n");
     }
 
@@ -88,6 +88,10 @@ public class Cart {
 
     public void sortByCostTitle() {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+
+    public ArrayList<Media> getItemsOrdered() {
+        return itemsOrdered;
     }
 
     public void empty() {
