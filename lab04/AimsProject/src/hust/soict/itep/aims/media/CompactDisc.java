@@ -64,7 +64,7 @@ public class CompactDisc extends Disc implements Playable{
                                         "    category: " + getCategory() +  "\n" +                                 
                                         "    director: " + getDirector() + "\n" +
                                         "    track: { \n" +
-                                        printtracks() + '}' + "\n" +
+                                        printtracks() + "    }" + "\n" +
                                         "    cost: " + getCost() + "$" + "\n" +
                                         "}" ; 
     }

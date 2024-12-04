@@ -21,7 +21,7 @@ public class Book extends Media{
         // this.title = title;
         // this.category = category;
         // this.cost = cost;
-        super();
+        super(id, title, category, cost);
         this.authors = authors;
     }
 
@@ -96,10 +96,7 @@ public class Book extends Media{
     }
 
     private String printAuthors() {
-        String str = "";
-        for (String author : authors) {
-            str += author + ", ";
-        }
-        return str;
+        return String.join(", ", authors);
     }
+    
 }

@@ -180,6 +180,7 @@ public class Aims {
                         System.out.print("Enter author name: ");
                         List<String> authors = new ArrayList<>();
                         for (int i = 0; i < num; i++) {
+                            System.out.printf("Enter name of author %d: ", i + 1);
                             String author = scanner.nextLine();
                             authors.add(author);
                         }                              
@@ -363,9 +364,11 @@ public class Aims {
                     if (option2 == 1) {
                         int id = scanner.nextInt();
                         System.out.println(cart.searchById(id).toString());
-                    } else {
+                    } else if (option2 == 2) {
                         String title = scanner.nextLine();
                         System.out.println(cart.searchByTitle(title).toString());
+                    } else {
+                        System.out.println("No option. Try again.");
                     }
                     break;
                 }
@@ -373,17 +376,19 @@ public class Aims {
                     System.out.println("Option: ");
                     System.out.println("______________");
                     System.out.println("1. Sort by title");
-                    System.out.println("2. Sort by id");
+                    System.out.println("2. Sort by cost");
                     System.out.println("______________");
                     System.out.println("Please choose a number: 1-2"); 
                     int option2 = scanner.nextInt();
                     scanner.nextLine();
                     if (option2 == 1) {
-                        ;
+                        cart.sortByTitleCost();
                         cart.print();
-                    } else {
+                    } else if (option2 == 2) {
                         cart.sortByCostTitle();
                         cart.print();
+                    } else {
+                        System.out.println("No option. Try again.");
                     }
                     break;
                 }
@@ -427,7 +432,8 @@ public class Aims {
                 }
 
                 case  5 : {
-                    System.out.println("Thanks for using our service");
+                    System.out.println("An order is created. ");
+                    cart.empty();
                     break;
                 }
 
