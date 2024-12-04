@@ -58,7 +58,7 @@ public class CompactDisc extends Disc implements Playable{
     // Ghi de phuong thuc toString() cua lop Media
     @Override
     public String toString() {
-        return "HoTuanAnh20226100 Disc: { " + "\n" +
+        return "HoTuanAnh20226100 CD: { " + "\n" +
                                         "    id: "+ getId() + "\n" +
                                         "    title: " + getTitle() +  "\n" +
                                         "    category: " + getCategory() +  "\n" +                                 
