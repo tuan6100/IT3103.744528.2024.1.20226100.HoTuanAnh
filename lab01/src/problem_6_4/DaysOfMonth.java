@@ -30,7 +30,7 @@ public class DaysOfMonth {
         calendar.set(Calendar.YEAR, year);
         System.out.print("Enter month: ");
         String month = sc.next();
-        month = month.trim();
+        month = month.`();
 
         int monthNumber = -1;
         for (String[] monthNames : new DaysOfMonth().monthsList) {
