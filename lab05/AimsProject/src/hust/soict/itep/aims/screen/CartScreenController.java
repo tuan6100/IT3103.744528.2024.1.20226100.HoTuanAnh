@@ -132,26 +132,6 @@ public class CartScreenController {
     }
 
     @FXML
-    void updateButtonBar(Media media) {
-        btnRemove.setVisible(true);
-        if(media instanceof Playable) {
-            btnPlay.setVisible(true);
-        } else {
-            btnPlay.setVisible(false);
-        }
-    }
-
-    @FXML
-    void brnRemovePressed(ActionEvent event) {
-        Media media = tblMedia.getSelectionModel().getSelectedItem();
-        try {
-            cart.removeMedia(media);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
     void showFilteredMedia(String s) {
         if (filterCategory.getSelectedToggle() == radioBtnFilterTitle) {
             ArrayList<Media> filterByTitle = new ArrayList<Media>();
@@ -179,7 +159,7 @@ public class CartScreenController {
         popupwindow.setTitle("Place order");
 
         Label label1 = new Label("You have place your order !");
-        label1.setFont(Font.font("Arial", FontWeight.BOLD,14));
+        label1.setFont(Font.font("San Serif", FontWeight.BOLD,14));
         Label label2 = new Label("Your bill total is " + Float.toString(cart.totalCost()) + "$");
         Button button1= new Button("OK !");
         label2.setTextFill(Color.RED);
@@ -190,5 +170,25 @@ public class CartScreenController {
         Scene scene1= new Scene(layout, 300, 200);
         popupwindow.setScene(scene1);
         popupwindow.show();
+    }
+
+    @FXML
+    void updateButtonBar(Media media) {
+        btnRemove.setVisible(true);
+        if(media instanceof Playable) {
+            btnPlay.setVisible(true);
+        } else {
+            btnPlay.setVisible(false);
+        }
+    }
+
+    @FXML
+    void btnRemovePressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        try {
+            cart.removeMedia(media);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
