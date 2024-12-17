@@ -5,10 +5,10 @@ import java.util.*;
 
 public class Book extends Media{
 
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
+    // private int id;
+    // private String title;
+    // private String category;
+    // private float cost;
     private List<String> authors = new ArrayList<String>();
 
     public Book() {
