@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"E:\\Download\\openjfx-23_windows-x64_bin-sdk\\javafx-sdk-23\\lib\" --add-modules javafx.controls,javafx.fxml,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "hust.soict.itep.aims.Aims",
+            "projectName": "AimsProject_d3c25d01"
+        },
+        {
+            "type": "java",
+            "name": "MediaStore",
+            "request": "launch",
+            "mainClass": "hust.soict.itep.aims.screen.MediaStore",
+            "projectName": "AimsProject_d3c25d01"
+        },
+        {
+            "type": "java",
+            "name": "PolymorphismTest",
+            "request": "launch",
+            "mainClass": "hust.soict.itep.test.PolymorphismTest",
+            "projectName": "AimsProject_d3c25d01"
+        }
+    ]
+}
