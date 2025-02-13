@@ -1,12 +1,14 @@
-package com.oop.problem2_2_6
+package com.oop.problem2_2_6.impl
 
-class FirstDegreeEquation (val a: Double, val b: Double) {
+import com.oop.problem2_2_6.Equation
 
-    fun display(): String {
+class FirstDegreeEquation (val a: Double, val b: Double) : Equation {
+
+    override fun display(): String {
         return "Equation: ${a}x + $b = 0"
     }
 
-    fun solve(): Double {
+    override fun solve(): Double {
         if (a == 0.0) {
             if (b == 0.0) {
                 return Double.POSITIVE_INFINITY
