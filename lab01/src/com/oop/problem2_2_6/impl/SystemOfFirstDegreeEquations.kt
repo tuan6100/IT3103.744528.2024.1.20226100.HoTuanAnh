@@ -19,6 +19,11 @@ class SystemOfFirstDegreeEquations(val a11: Double, val a12: Double, val b1: Dou
         val dy = a11 * b2 - a21 * b1
         if (d == 0.0) {
             if (dx == 0.0 && dy == 0.0) {
+                if (a21 / a11 == b2 / b1) {
+                    return Pair("any", "any")
+                } else {
+                    throw ArithmeticException("The system has no solution.")
+                }
                 if (a12 == 0.0 && a22 == 0.0) {
                     if (a11 == 0.0 && a21 == 0.0) {
                         if (b1 == 0.0 && b2 == 0.0) {
@@ -27,32 +32,32 @@ class SystemOfFirstDegreeEquations(val a11: Double, val a12: Double, val b1: Dou
                             throw ArithmeticException("The system has no solution.")
                         }
                     } else if (a11 != 0.0 ) {
-                        val y = b1 / a11
-                        if (y  * a21 == b2) {
-                            return Pair("any", y)
+                        val x = b1 / a11
+                        if (x * a21 == b2) {
+                            return Pair(x, "any")
                         } else {
                             throw ArithmeticException("The system has no solution.")
                         }
                     } else if (a21 != 0.0) {
-                        val y = b2 / a21
-                        if (y * a11 == b1) {
-                            return Pair("any", y)
+                        val x = b2 / a21
+                        if (x * a11 == b1) {
+                            return Pair(x, "any")
                         } else {
                             throw ArithmeticException("The system has no solution.")
                         }
                     }
                 } else if (a11 == 0.0 && a21 == 0.0) {
                     if (a12 != 0.0) {
-                        val x = b1 / a12
-                        if (x * a22 == b2) {
-                            return Pair(x, "any")
+                        val y = b1 / a12
+                        if (y * a22 == b2) {
+                            return Pair("any", y)
                         } else {
                             throw ArithmeticException("The system has no solution.")
                         }
                     } else if (a22 != 0.0) {
-                        val x = b2 / a22
-                        if (x * a12 == b1) {
-                            return Pair(x, "any")
+                        val y = b2 / a22
+                        if (y * a12 == b1) {
+                            return Pair("any", y)
                         } else {
                             throw ArithmeticException("The system has no solution.")
                         }

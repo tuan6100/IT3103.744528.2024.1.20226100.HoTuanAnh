@@ -15,7 +15,7 @@ fun main() {
     println(secondDegreeEquation.display())
     println("Solution: ${secondDegreeEquation.solve()}\n")
 
-    val systemOfFirstDegreeEquations = SystemOfFirstDegreeEquations(2.0, 1.0, 3.0, 4.0, 5.0, -1.0)
+    val systemOfFirstDegreeEquations = SystemOfFirstDegreeEquations(  1.0, 0.0, 3.0, 1.0, 2.0, 4.0)
     println(systemOfFirstDegreeEquations.display())
     try {
         println("Solution: ${systemOfFirstDegreeEquations.solve()}\n")

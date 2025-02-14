@@ -99,10 +99,10 @@ fun heapify(array: Array<Int>, n: Int, i: Int) {
         largest = rightChild
     }
     if (largest != i) {
-        val temp = array[i];
-        array[i] = array[largest];
-        array[largest] = temp;
-        heapify(array, n, largest);
+        val temp = array[i]
+        array[i] = array[largest]
+        array[largest] = temp
+        heapify(array, n, largest)
     }
 }
 
