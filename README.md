@@ -1,4 +1,4 @@
 # Object-Oriented Programming
 > [!NOTE]
-> Upstream branch is master
+> Java version is on the branch master
 
